@@ -18,9 +18,7 @@ data = df[features + [target]].values
 scaler = MinMaxScaler()
 data_scaled = scaler.fit_transform(data)
 
-# -------------------------
-# 3. Create sequences
-# -------------------------
+
 def create_sequences(data, lookback=24):
     X, y = [], []
     for i in range(len(data) - lookback):
@@ -66,3 +64,4 @@ plt.plot(y_pred_inv[:200], label="Predicted")
 plt.legend()
 plt.title("Actual vs Predicted (Simple LSTM)")
 plt.show()
+
